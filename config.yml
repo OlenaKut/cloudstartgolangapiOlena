@@ -1,12 +1,12 @@
 # Database credentials
 database:
   # antingen denna
-  file: "sqlite.sqlite" 
+  file: "" 
   # eller alla dessa (om file är blankt)
-  sql-user: ""            #
-  sql-pass: ""
-  sql-server: "127.0.0.1"
-  sql-database: "SupportSystem"
+  sql-user: "root"          
+  sql-pass: "hejolena123"
+  sql-server: "mysqlserver1"
+  sql-database: "stensax"
   sql-port: 3306
 
 redis:
