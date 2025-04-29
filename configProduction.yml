@@ -4,7 +4,7 @@ database:
   file: "" 
   # eller alla dessa (om file är blankt)
   sql-user: "root"          
-  sql-pass: "root"
+  sql-pass: "hejolena123"
   sql-server: "mysqlserver1"
   sql-database: "stensax"
   sql-port: 3306
