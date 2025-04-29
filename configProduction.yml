@@ -3,10 +3,10 @@ database:
   # antingen denna
   file: "" 
   # eller alla dessa (om file är blankt)
-  sql-user: "root"            #
-  sql-pass: "Hejsan123"
-  sql-server: "mysql"
-  sql-database: "salary"
+  sql-user: "root"          
+  sql-pass: "root"
+  sql-server: "mysqlserver1"
+  sql-database: "stensax"
   sql-port: 3306
 
 redis:
