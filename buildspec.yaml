@@ -1,0 +1,9 @@
+version: 0.2
+
+        
+phases:
+  build:
+    commands:
+      - docker build -t git.systementor.se/olena/stensax .
+      - docker login -u olena -p 18011984Aa. https://git.systementor.se
+      - docker push git.systementor.se/olena/stensax

@@ -13,7 +13,7 @@ var config Config
 var theRandom *rand.Rand
 
 func start(c *gin.Context) {
-	c.Data(http.StatusOK, "application/text", []byte("Tjena"))
+	c.Data(http.StatusOK, "application/text", []byte("Hello Olena"))
 }
 
 func enableCors(c *gin.Context) {
@@ -30,7 +30,7 @@ func apiPlay(c *gin.Context) {
 	enableCors(c)
 	yourSelection := c.Query("yourSelection")
 	mySelection := randomizeSelection()
-	winner := "Tie"
+	winner := "Draw"
 	if yourSelection == "STONE" && mySelection == "SCISSOR" {
 		winner = "You"
 	}
