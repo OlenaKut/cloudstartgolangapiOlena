@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Sten – Sax – Påse</title>
+    <title>Rock - Scissors - Bag</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -71,8 +71,9 @@
     <script>
       async function play(selection) {
         try {
+          const API_BASE = "https://stensax.home.kg";
           const res = await fetch(
-            `http://localhost:8080/api/play?yourSelection=${selection}`
+            `${API_BASE}/api/play?yourSelection=${selection}`
           );
           const data = await res.json();
           const resultColor =
@@ -92,7 +93,7 @@
           </div>
         `;
 
-          const statsRes = await fetch(`http://localhost:8080/api/stats`);
+          const statsRes = await fetch(`${API_BASE}/api/stats`);
           const stats = await statsRes.json();
           document.getElementById("stats").innerHTML = `
           <div class="card border-0 shadow-sm">
@@ -108,7 +109,7 @@
         `;
         } catch (err) {
           document.getElementById("result").innerHTML = `
-          <div class="alert alert-danger">Något gick fel! 😢</div>
+          <div class="alert alert-danger">Something went wrong! 😢</div>
         `;
           console.error(err);
         }

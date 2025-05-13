@@ -1,6 +1,5 @@
 # Database credentials
 database:
-  # antingen denna
   file: ""
   # eller alla dessa (om file är blankt)
   sql-user: "root"

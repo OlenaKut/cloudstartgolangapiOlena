@@ -13,7 +13,7 @@ var config Config
 var theRandom *rand.Rand
 
 func start(c *gin.Context) {
-	c.Data(http.StatusOK, "text/plain", []byte("Hello Olena"))
+	c.File("./static/index.html")
 }
 
 func enableCors(c *gin.Context) {
@@ -83,6 +83,7 @@ func main() {
 	router.GET("/", start)
 	router.GET("/api/play", apiPlay)
 	router.GET("/api/stats", apiStats)
+	router.Static("/static", "./static")
 
 	router.Run(":8080")
 
