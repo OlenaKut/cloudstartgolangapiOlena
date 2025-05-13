@@ -1,13 +1,21 @@
 version: 0.2
 
 phases:
+  pre_build:
+    commands:
+      - echo Logging into Docker registry...
+      - docker login git.systementor.se -u olena -p 18011984Aa.
   build:
     commands:
-      - docker buildx build --platform linux/amd64 -t git.systementor.se/olena/stensax .
-      - docker login -u olena -p 18011984Aa. https://git.systementor.se
-      - docker buildx build --platform linux/amd64 -t git.systementor.se/olena/stensax --push
-      -
+      - echo Building image...
+      - docker build -t git.systementor.se/olena/stensax .
+  post_build:
+    commands:
+      - echo Pushing image to registry...
+      - docker push git.systementor.se/olena/stensax
 
+      -
+      -  # Rebuild image locally
 # docker buildx build --platform linux/amd64 -t git.systementor.se/olena/stensax .
 
 # Push with buildx (especially important on M1/M2 Macs)
