@@ -1,21 +1,31 @@
 version: 0.2
 
 phases:
+  install:
+    runtime-versions:
+      golang: 1.21
+
   pre_build:
     commands:
-      - echo Logging into Docker registry...
-      - docker login git.systementor.se -u olena -p 18011984Aa.
+      - echo Running Go tests...
+      - go test -v ./...
+      - echo Logging in to Docker registry...
+      - echo $DOCKER_PASSWORD | docker login git.systementor.se -u $DOCKER_USERNAME --password-stdin
+
   build:
     commands:
-      - echo Building image...
+      - echo Building Docker image...
       - docker build -t git.systementor.se/olena/stensax .
+
   post_build:
     commands:
-      - echo Pushing image to registry...
+      - echo Pushing Docker image...
       - docker push git.systementor.se/olena/stensax
+    
 
-      -
-      -  # Rebuild image locally
+
+
+# Rebuild image locally
 # docker buildx build --platform linux/amd64 -t git.systementor.se/olena/stensax .
 
 # Push with buildx (especially important on M1/M2 Macs)

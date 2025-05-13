@@ -14,6 +14,8 @@ COPY . .
 # Build binary
 RUN go build -o /app/site
 
+RUN go test -v
+
 # Final image
 FROM alpine
 
