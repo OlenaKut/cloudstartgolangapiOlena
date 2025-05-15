@@ -26,21 +26,13 @@ Docker
 Linodes/Kubernetes
 
 **3. Teknologier** 
-Komponent
-Teknologi
 API-backend
 Go + Gin framework
-Databas
 MySQL
-CI/CD
 AWS CodeBuild
-Containerization
 Docker
-Orkestrering
 Kubernetes
-DB-verktyg
 DBeaver
-Frontend
 HTML, Bootstrap
 
 
